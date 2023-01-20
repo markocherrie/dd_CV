@@ -1,6 +1,6 @@
 ---
-title: "Mark Cherrie's CV"
-author: Mark Cherrie
+title: "Dr. Mark Cherrie's CV"
+author: Dr. Mark Cherrie
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -48,15 +48,16 @@ Aside
 ```{r}
 # Build interactive network of positions colored by section
 # and connected if they occurred in the same year
-print("hello")
+datadrivencv::build_network_logo(CV$entries_data)
+#knitr::include_graphics("images/greenspace.png")
 ```
 
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _markcherrie.com_")
+  cat("View this CV online with links at _www.markcherrie.com_")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](markcherrie.com)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](www.markcherrie.com)")
 }
 ```
 
@@ -81,18 +82,11 @@ CV %>% print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-The source code is available [on github.com/nstrayer/cv](https://github.com/markocherrie/dd_cv).
-
-Last updated on `r Sys.Date()`.
-
-
 
 Main
 ================================================================================
 
-Mark Cherrie {#title}
+Dr. Mark Cherrie {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -119,20 +113,6 @@ CV %<>% print_section('research_positions')
 ```
 
 
-
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-CV %<>% print_text_block('industy_experience_aside')
-```
-:::
-
-```{r}
-CV %<>% print_section('industry_positions')
-```
-
 <!-- These breaks just force a new page so section doesnt get cut off -->
 <br>
 <br>
@@ -153,40 +133,18 @@ CV %<>% print_section('teaching_positions')
 
 
 
-Selected Data Science Writing {data-icon=chart-line}
+Selected Research Web Apps {data-icon=chart-line}
 --------------------------------------------------------------------------------
 
 ::: aside
 ```{r}
-CV %<>% print_text_block('data_science_writing_aside')
+CV %<>% print_text_block('web_apps_aside')
 ```
 :::
 
 ```{r}
-CV %<>% print_section('data_science_writings')
+CV %<>% print_section('web_apps')
 ```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('by_me_press')
-```
-
 
 
 Selected Publications, Posters, and Talks {data-icon=book}
